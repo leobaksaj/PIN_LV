@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lv1_Baksaj</string>
+
+    <string name="dobrodosli">ÜDVÖZÖLJÜK</string>
+    <string name="dodajStudenta">Új tanuló hozzáadása</string>
+    <string name="uputaMain">Írja be az utó- és vezetéknevét, majd kattintson a "Tovább" gombra</string>
+    <string name="datumRodenja">Születési dátum</string>
+    <string name="dalje1">További</string>
+    <string name="brSati">Órák száma</string>
+    <string name="predavanja">Előadás</string>
+    <string name="vjezbe">Feladatok</string>
+    <string name="infoStud">Hallgatói információk</string>
+    <string name="satiPredavanja">Az előadások óraszáma</string>
+    <string name="satiVjezbi">A testedzés óráinak száma</string>
+    <string name="godStudija">A tanulmány éve</string>
+    <string name="buttonZavrsi">Befejez</string>
+    <string name="buttonPrevedi">Fordít</string>
+    <string name="imeProfa">Professzor neve</string>
+    <string name="studenti">Diákok</string>
+    <string name="unesiteIme">Írjon be egy nevet</string>
+    <string name="unesitePrezme">Írja be a vezetéknevet</string>
+    <string name="unesiteDatumRodenja">Írja be a születési dátumát</string>
+    <string name="unesiteImeProfesora">Írja be a professzor nevét</string>
+    <string name="unesiteImeKolegija">Írja be a tanfolyam nevét</string>
+    <string name="unesiteGodinuStudija">Adja meg a tanulmány évét</string>
+    <string name="pogledajViewPage">Oldal megtekintése</string>
+
+</resources>

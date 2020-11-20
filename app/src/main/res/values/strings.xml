@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Lv1_Baksaj</string>
+
+    <string name="dobrodosli">DOBRODOŠLI</string>
+    <string name="dodajStudenta">Dodaj novog studenta</string>
+    <string name="uputaMain">Upišite svoje ime i prezimei pritisni "'Dalje'"</string>
+    <string name="datumRodenja">Datum rođenja</string>
+    <string name="dalje1">Dalje</string>
+    <string name="brSati">Broj sati</string>
+    <string name="predavanja">Predavanja</string>
+    <string name="vjezbe">Vježbe</string>
+    <string name="infoStud">Informacije o studentu</string>
+    <string name="satiPredavanja">Broj sati predavanja</string>
+    <string name="satiVjezbi">Broj sati vjezbi</string>
+    <string name="godStudija">Godina studija</string>
+    <string name="buttonZavrsi">Završi</string>
+    <string name="buttonPrevedi">Prevedi</string>
+    <string name="imeProfa">Ime profesora</string>
+    <string name="studenti">Studenti</string>
+    <string name="unesiteIme">Unesite ime</string>
+    <string name="unesitePrezme">Unesite prezime</string>
+    <string name="unesiteDatumRodenja">Unesite datum rođenja</string>
+    <string name="unesiteImeProfesora">Unesite ime profesora</string>
+    <string name="unesiteImeKolegija">Unesite ime kolegija</string>
+    <string name="unesiteGodinuStudija">Unesite godinu studija</string>
+    <string name="pogledajViewPage">View Page</string>
+
+    <string-array name="imenaStudenata">
+        <item>Leo Bakšaj</item>
+        <item>Jakov Kečolibac</item>
+        <item>Darko Marko</item>
+        <item>Marko Darko</item>
+        <item>Željko Marac</item>
+        <item>Mario Krkić</item>
+        <item>Dario Brkić</item>
+    </string-array>
+
+    <string-array name="nazivPredmeta">
+        <item>Pin</item>
+        <item>CMS</item>
+        <item>RAČ Mreže</item>
+        <item>E-learning</item>
+        <item>Digitalizacija</item>
+        <item>Stručna praksa</item>
+        <item>.NET</item>
+    </string-array>
+    <string name="title_activity_create_new_record">CreateNewRecordActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_view_page">ActivityViewPage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

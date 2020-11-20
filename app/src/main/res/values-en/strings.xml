@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lv1_Baksaj</string>
+
+    <string name="dobrodosli">WELCOME</string>
+    <string name="dodajStudenta">Add new student</string>
+    <string name="uputaMain">Enter your first and last name and click "Next"</string>
+    <string name="datumRodenja">Date of birth</string>
+    <string name="dalje1">Next</string>
+    <string name="brSati">Number of hours</string>
+    <string name="predavanja">Lecture</string>
+    <string name="vjezbe">Exercise</string>
+    <string name="infoStud">Student information</string>
+    <string name="satiPredavanja">Number of hourse of lecture</string>
+    <string name="satiVjezbi">Number of hours of exercise</string>
+    <string name="godStudija">Year of study</string>
+    <string name="buttonZavrsi">Finish</string>
+    <string name="buttonPrevedi">Translate</string>
+    <string name="imeProfa">Professor name</string>
+    <string name="studenti">Students</string>
+    <string name="unesiteIme">Enter a name</string>
+    <string name="unesitePrezme">Enter a surname</string>
+    <string name="unesiteDatumRodenja">Enter your date of birth</string>
+    <string name="unesiteImeProfesora">Enter the professor name</string>
+    <string name="unesiteImeKolegija">Enter the name of the course</string>
+    <string name="unesiteGodinuStudija">Enter the year of study</string>
+    <string name="pogledajViewPage">View Page</string>
+</resources>
