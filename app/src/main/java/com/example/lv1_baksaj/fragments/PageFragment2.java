@@ -16,14 +16,15 @@ import androidx.fragment.app.Fragment;
 
 import com.example.lv1_baksaj.MainActivity;
 import com.example.lv1_baksaj.R;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class PageFragment2 extends Fragment {
 
-    private EditText oPredmet;
-    private EditText oProfesor;
-    private EditText oAkGod;
-    private EditText oSatiPredavanja;
-    private EditText oSatiLva;
+    private TextInputLayout oPredmet;
+    private TextInputLayout oProfesor;
+    private TextInputLayout oAkGod;
+    private TextInputLayout oSatiPredavanja;
+    private TextInputLayout oSatiLva;
     private Button oDaljeButton;
 
     private String predmet;
@@ -53,11 +54,11 @@ public class PageFragment2 extends Fragment {
         oSatiPredavanja = view.findViewById(R.id.editTextNumber2);
         oSatiLva = view.findViewById(R.id.editTextNumber3);
 
-        oPredmet.addTextChangedListener(personalInfoWatcher);
-        oProfesor.addTextChangedListener(personalInfoWatcher);
-        oAkGod.addTextChangedListener(personalInfoWatcher);
-        oSatiPredavanja.addTextChangedListener(personalInfoWatcher);
-        oSatiLva.addTextChangedListener(personalInfoWatcher);
+        oPredmet.getEditText().addTextChangedListener(personalInfoWatcher);
+        oProfesor.getEditText().addTextChangedListener(personalInfoWatcher);
+        oAkGod.getEditText().addTextChangedListener(personalInfoWatcher);
+        oSatiPredavanja.getEditText().addTextChangedListener(personalInfoWatcher);
+        oSatiLva.getEditText().addTextChangedListener(personalInfoWatcher);
 
         oDaljeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,11 +82,11 @@ public class PageFragment2 extends Fragment {
 
         @Override
         public void afterTextChanged(Editable s) {
-            predmet = oPredmet.getEditableText().toString();
-            profesor = oProfesor.getEditableText().toString();
-            akGod = oAkGod.getEditableText().toString();
-            satiPredavanja = oSatiPredavanja.getEditableText().toString();
-            satiLva = oSatiLva.getEditableText().toString();
+            predmet = oPredmet.getEditText().getText().toString();
+            profesor = oProfesor.getEditText().getText().toString();
+            akGod = oAkGod.getEditText().getText().toString();
+            satiPredavanja = oSatiPredavanja.getEditText().getText().toString();
+            satiLva = oSatiLva.getEditText().getText().toString();
 
             studentInfoListener.onStudentInfoSent(predmet, profesor, akGod,satiPredavanja,satiLva);
         }

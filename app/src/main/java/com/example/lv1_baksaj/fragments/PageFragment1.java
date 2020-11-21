@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.lv1_baksaj.MainActivity;
 import com.example.lv1_baksaj.R;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class PageFragment1 extends Fragment {
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -28,7 +29,9 @@ public class PageFragment1 extends Fragment {
     private String mParam2;
 
     private ImageView imageView;
-    private EditText oIme, oPrezime, oDatum;
+    private TextInputLayout oIme;
+    private TextInputLayout oPrezime;
+    private EditText oDatum;
     private String ime, prezime, datum;
     private Button oButton;
     private PersonalInfoListener personalInfoListener;
@@ -47,13 +50,13 @@ public class PageFragment1 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         imageView = view.findViewById(R.id.imageView2);
-        oIme = view.findViewById(R.id.textInputLayout);
-        oPrezime = view.findViewById(R.id.textInputLayout2);
+        oIme = (TextInputLayout) view.findViewById(R.id.textInputLayout);
+        oPrezime = (TextInputLayout) view.findViewById(R.id.textInputLayout2);
         oDatum = view.findViewById(R.id.editTextDate);
         oButton = view.findViewById(R.id.button);
 
-        oIme.addTextChangedListener(personalInfoWatcher);
-        oPrezime.addTextChangedListener(personalInfoWatcher);
+        oIme.getEditText().addTextChangedListener(personalInfoWatcher);
+        oPrezime.getEditText().addTextChangedListener(personalInfoWatcher);
         oDatum.addTextChangedListener(personalInfoWatcher);
 
         oButton.setOnClickListener(new View.OnClickListener() {
@@ -87,8 +90,8 @@ public class PageFragment1 extends Fragment {
 
         @Override
         public void afterTextChanged(Editable s) {
-            ime = oIme.getText().toString();
-            prezime = oPrezime.getText().toString();
+            ime = oIme.getEditText().getText().toString();
+            prezime = oPrezime.getEditText().getText().toString();
             datum = oDatum.getText().toString();
 
             personalInfoListener.onPersonalInfoSent(ime,prezime,datum);

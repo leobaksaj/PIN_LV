@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements PageFragment1.Per
         fragment.updateStudentInfo(predmet, ime_profesora, akademska_godina, sati_predavanja, sati_LV);
     }
 
+
     public static void setCurrentItem (int item, boolean smoothScroll) {
         viewPager.setCurrentItem(item, smoothScroll);
     }

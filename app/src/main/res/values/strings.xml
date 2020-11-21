@@ -3,7 +3,7 @@
 
     <string name="dobrodosli">DOBRODOŠLI</string>
     <string name="dodajStudenta">Dodaj novog studenta</string>
-    <string name="uputaMain">Upišite svoje ime i prezimei pritisni "'Dalje'"</string>
+    <string name="uputaMain">  Upišite svoje ime i prezime i pritisni "'Dalje'"</string>
     <string name="datumRodenja">Datum rođenja</string>
     <string name="dalje1">Dalje</string>
     <string name="brSati">Broj sati</string>
