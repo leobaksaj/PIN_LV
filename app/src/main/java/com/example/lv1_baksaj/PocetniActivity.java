@@ -1,6 +1,7 @@
 package com.example.lv1_baksaj;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PocetniActivity extends AppCompatActivity
-{
-    RecyclerView recyclerView;
+public class PocetniActivity extends AppCompatActivity {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
     private Button button;
     Spinner spinner;
     Locale myLocale;
@@ -38,19 +40,26 @@ public class PocetniActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pocetni);
 
-        recyclerView = findViewById(R.id.recycleView);
-
+        mRecyclerView = findViewById(R.id.recycleView);
+        /*
         arrStudenti = getResources().getStringArray(R.array.imenaStudenata);
         arrKolegij = getResources().getStringArray(R.array.nazivPredmeta);
 
         MyAdapter myAdapter = new MyAdapter(this, arrStudenti,arrKolegij);
-        recyclerView.setAdapter(myAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(myAdapter);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
 
+        /////////////////////////////////////////////////////////////////////
+
+        MyDataStorage spremnik = MyDataStorage.getInstanca();
+        List<Object> studenti = spremnik.getStudenti();
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new StudentAdapter(studenti);
+        mRecyclerView.setAdapter(mAdapter);
+        /////////////////////////////////////////////////////////////////////
         currentLanguage = getIntent().getStringExtra(currentLang);
-
         spinner = (Spinner) findViewById(R.id.spinner);
-
         List<String> list = new ArrayList<String>();
 
         list.add("Odaberi jezik");
@@ -91,9 +100,6 @@ public class PocetniActivity extends AppCompatActivity
                 openMainActivity();
             }
         });
-    }
-
-    public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
     public void openMainActivity() {

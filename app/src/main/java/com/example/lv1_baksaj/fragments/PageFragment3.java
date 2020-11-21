@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lv1_baksaj.MyDataStorage;
 import com.example.lv1_baksaj.PocetniActivity;
 import com.example.lv1_baksaj.R;
+import com.example.lv1_baksaj.Student;
 
 public class PageFragment3 extends Fragment {
 
@@ -58,6 +60,9 @@ public class PageFragment3 extends Fragment {
         oSumButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MyDataStorage myDataStorage = MyDataStorage.getInstanca();
+                Student student = new Student(sIme, sPrezime, sPredmet);
+                myDataStorage.setStudenti(student);
                 Intent intent = new Intent(getActivity(), PocetniActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -83,5 +88,4 @@ public class PageFragment3 extends Fragment {
         oSatiPredavanja.setText(sati_predavanja);
         oSatiLva.setText(sati_LV);
     }
-
 }

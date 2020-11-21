@@ -81,11 +81,11 @@ public class PageFragment2 extends Fragment {
 
         @Override
         public void afterTextChanged(Editable s) {
-            predmet = oPredmet.getText().toString();
-            profesor = oProfesor.getText().toString();
-            akGod = oAkGod.getText().toString();
-            satiPredavanja = oSatiPredavanja.getText().toString();
-            satiLva = oSatiLva.getText().toString();
+            predmet = oPredmet.getEditableText().toString();
+            profesor = oProfesor.getEditableText().toString();
+            akGod = oAkGod.getEditableText().toString();
+            satiPredavanja = oSatiPredavanja.getEditableText().toString();
+            satiLva = oSatiLva.getEditableText().toString();
 
             studentInfoListener.onStudentInfoSent(predmet, profesor, akGod,satiPredavanja,satiLva);
         }

@@ -1,7 +1,10 @@
 package com.example.lv1_baksaj.fragments;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -9,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,6 +27,7 @@ public class PageFragment1 extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private ImageView imageView;
     private EditText oIme, oPrezime, oDatum;
     private String ime, prezime, datum;
     private Button oButton;
@@ -41,6 +46,7 @@ public class PageFragment1 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        imageView = view.findViewById(R.id.imageView2);
         oIme = view.findViewById(R.id.textInputLayout);
         oPrezime = view.findViewById(R.id.textInputLayout2);
         oDatum = view.findViewById(R.id.editTextDate);
@@ -54,6 +60,16 @@ public class PageFragment1 extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.setCurrentItem(1,true);
+            }
+        });
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(getActivity().getPackageManager()) != null){
+                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                }
             }
         });
 
@@ -90,5 +106,14 @@ public class PageFragment1 extends Fragment {
     public void onDetach() {
         super.onDetach();
         personalInfoListener = null;
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE){
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+        }
     }
 }

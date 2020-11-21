@@ -7,45 +7,42 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+import com.example.lv1_baksaj.fragments.PageFragment3;
+import com.example.lv1_baksaj.fragments.PageFragment2;
+import com.example.lv1_baksaj.fragments.PageFragment1;
 
-    String data1[], data2[];
-    Context context;
+public class MyAdapter extends FragmentPagerAdapter {
+    private static int NUM_ITEMS = 3;
 
-    public MyAdapter(Context ct, String arrStudenti[], String arrKolegij[]){
-        context = ct;
-        data1 = arrStudenti;
-        data2 = arrKolegij;
+    public MyAdapter(@NonNull FragmentManager fm) {
+        super(fm);
     }
 
+    // Returns total number of pages
+    @Override
+    public int getCount() {
+        return NUM_ITEMS;
+    }
+
+    // Returns the fragment to display for that page
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent,  false);
-        return new MyViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.myText1.setText(data1[position]);
-        holder.myText2.setText(data2[position]);
-    }
-
-    @Override
-    public int getItemCount() {
-
-        return data2.length;
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView myText1, myText2;
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            myText1 = itemView.findViewById(R.id.textView24);
-            myText2 = itemView.findViewById(R.id.textView5);
+    public Fragment getItem(int position) {
+        switch (position) {
+            case 0: // Fragment # 0 - This will show FirstFragment
+                return new PageFragment1();
+            case 1: // Fragment # 0 - This will show FirstFragment different title
+                return new PageFragment2();
+            case 2: // Fragment # 1 - This will show SecondFragment
+                return new PageFragment3();
+            default:
+                return null;
         }
     }
+
 }
