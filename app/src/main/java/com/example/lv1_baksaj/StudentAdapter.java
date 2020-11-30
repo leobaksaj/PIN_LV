@@ -48,7 +48,7 @@ public class StudentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
             headerViewHolder.tvNaslov.setText(dataList.get(position).toString());
         }
-        }
+    }
 
     @Override
     public int getItemCount() {

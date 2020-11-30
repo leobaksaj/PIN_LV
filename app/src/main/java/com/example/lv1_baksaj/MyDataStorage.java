@@ -5,25 +5,25 @@ import java.util.List;
 
 public class MyDataStorage {
 
-    private List<Object> studenti;
+    private List<Object> students;
     private MyDataStorage(){
-        studenti = new ArrayList<Object>();
+        students = new ArrayList<Object>();
     }
     static private MyDataStorage instanca;
 
     public static MyDataStorage getInstanca() {
         if(instanca == null){
             instanca = new MyDataStorage();
-            instanca.studenti.add("Studenti");
+            instanca.students.add("Studenti");
         }
         return instanca;
     }
 
     public void setStudenti(Student studenti) {
-        this.studenti.add(studenti);
+        this.students.add(studenti);
     }
 
     public List<Object> getStudenti(){
-        return studenti;
+        return students;
     }
 }

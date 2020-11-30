@@ -2,7 +2,9 @@ package com.example.lv1_baksaj;
 
 public class Student {
 
-    private String Ime, Prezime, Predmet;
+    public String Ime;
+    public String Prezime;
+    public String Predmet;
 
     public Student(String ime, String prezime, String predmet){
         Ime = ime;

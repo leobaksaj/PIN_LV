@@ -10,6 +10,7 @@ import com.example.lv1_baksaj.fragments.PageFragment2;
 import com.example.lv1_baksaj.fragments.PageFragment3;
 
 public class FragmentAdapter extends FragmentPagerAdapter{
+    private static int NUM_ITEMS = 3;
 
     public FragmentAdapter(FragmentManager fm) {
         super(fm);
@@ -17,7 +18,7 @@ public class FragmentAdapter extends FragmentPagerAdapter{
 
     @Override
     public int getCount() {
-        return 3;
+        return NUM_ITEMS;
     }
 
     @NonNull

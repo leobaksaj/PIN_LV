@@ -33,7 +33,6 @@ public class PocetniActivity extends AppCompatActivity {
     Spinner spinner;
     Locale myLocale;
     String currentLanguage = "hr", currentLang;
-    String arrStudenti[], arrKolegij[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +40,6 @@ public class PocetniActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pocetni);
 
         mRecyclerView = findViewById(R.id.recycleView);
-        /*
-        arrStudenti = getResources().getStringArray(R.array.imenaStudenata);
-        arrKolegij = getResources().getStringArray(R.array.nazivPredmeta);
-
-        MyAdapter myAdapter = new MyAdapter(this, arrStudenti,arrKolegij);
-        mRecyclerView.setAdapter(myAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
-
-        /////////////////////////////////////////////////////////////////////
-
         MyDataStorage spremnik = MyDataStorage.getInstanca();
         List<Object> studenti = spremnik.getStudenti();
         mLayoutManager = new LinearLayoutManager(this);
